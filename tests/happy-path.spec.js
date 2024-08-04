@@ -11,7 +11,4 @@ test('get started link', async ({ page }) => {
   await loginPage.closeCookieBanner();
   await expect(page).toHaveURL("https://www.douglas.de/de/login");
   await expect(page).toHaveTitle("Login | DOUGLAS");
-
-  await page.pause();
-  
 });
