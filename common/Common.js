@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 export class Common {
     constructor(page) {
         this.page = page;
-        this.urlLoginPage = '/login';
+        this.urlLoginPage = '/de/login';
         this.urlAccountPage = '/account';
 
     }
