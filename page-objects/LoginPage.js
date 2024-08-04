@@ -14,8 +14,8 @@ export class LoginPage {
     closeCookieBanner = async () => {
         const common = new Common(this.page);
         await this.page.goto(common.urlLoginPage);
-        await this.buttonAcceptAllCookies.waitFor();
-        await this.buttonAcceptAllCookies.click();
+        //await this.buttonAcceptAllCookies.waitFor();
+        //await this.buttonAcceptAllCookies.click();
     }
         //console.warn({convertedPrices});
         //await page.pause();
