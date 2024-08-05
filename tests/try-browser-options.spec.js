@@ -1,7 +1,7 @@
 // @ts-check
 import { test, expect, chromium } from "@playwright/test";
-import { Common } from "../common/Common";
-import { LoginPage } from "../page-objects/LoginPage";
+import { URLs } from "../common/URLs";
+import { PageLogin } from "../page-objects/PageLogin";
 
 test.skip('get started link', async ({ }) => {
 
@@ -21,22 +21,22 @@ test.skip('get started link', async ({ }) => {
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
   });
-  const common = new Common(page);
-  const loginPage = new LoginPage(page);
 
-  await page.goto('/login');
+  const pageLogin = new PageLogin(page);
 
-  await loginPage.buttonAcceptAllCookies.waitFor();
-  await loginPage.buttonAcceptAllCookies.click();
+  await page.goto(URLs.pageLogin);
 
-  await loginPage.inputLoginFormEmail.waitFor();
-  await loginPage.inputLoginFormEmail.fill("testuser.m40+001@proton.me");
+  await pageLogin.buttonAcceptAllCookies.waitFor();
+  await pageLogin.buttonAcceptAllCookies.click();
 
-  await loginPage.inputLoginFormPassword.waitFor();
-  await loginPage.inputLoginFormPassword.fill("TestUser00!");
+  await pageLogin.inputLoginFormEmail.waitFor();
+  await pageLogin.inputLoginFormEmail.fill("testuser.m40+001@proton.me");
 
-  await loginPage.buttonLoginFormSubmit.waitFor();
-  await loginPage.buttonLoginFormSubmit.click();
+  await pageLogin.inputLoginFormPassword.waitFor();
+  await pageLogin.inputLoginFormPassword.fill("TestUser00!");
+
+  await pageLogin.buttonLoginFormSubmit.waitFor();
+  await pageLogin.buttonLoginFormSubmit.click();
 
   await page.pause();
   

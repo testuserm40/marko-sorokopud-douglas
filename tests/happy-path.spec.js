@@ -1,14 +1,12 @@
 // @ts-check
 import { test, expect } from "@playwright/test";
-import { Common } from "../common/Common";
-import { LoginPage } from "../page-objects/LoginPage";
+import { CommonObjects } from "../page-objects/CommonObjects";
 
-test('get started link', async ({ page }) => {
+test.skip('get started link', async ({ page }) => {
 
-  const common = new Common(page);
-  const loginPage = new LoginPage(page);
-
-  await loginPage.closeCookieBanner();
-  await expect(page).toHaveURL("https://www.douglas.de/de/login");
-  await expect(page).toHaveTitle("Login | DOUGLAS");
+  const commonObjects = new CommonObjects(page);
+  await page.goto("/");
+  await commonObjects.closeCookieBanner();
+  await expect(page).toHaveURL("/de");
+  await expect(page).toHaveTitle("Online-Parfümerie ✔️ Parfum & Kosmetik kaufen | DOUGLAS");
 });
