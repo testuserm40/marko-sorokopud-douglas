@@ -23,6 +23,7 @@ import { CommonObjects } from "../page-objects/CommonObjects";
 
     // Step 3: Verify the success message with valid user email is displayed
     await expect(pageLogin.forgotPasswordSuccessUserEmail).toHaveText(TestData.userEmail);
+    await page.pause()
   });
 
   // await page.waitForTimeout(2000);

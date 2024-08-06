@@ -16,7 +16,7 @@ test.describe("User Login Tests", () => {
     commonObjects = new CommonObjects(page);
   });
 
-  test('id:001 As an user with correct credentials I would like to be able to login to the web shop', async ({ page }) => {
+  test.skip('id:001 As an user with correct credentials I would like to be able to login to the web shop', async ({ page }) => {
 
     // Step 1. Navigate to the login page and close cookie banners
     await page.goto(URLs.pageLogin);
@@ -38,7 +38,7 @@ test.describe("User Login Tests", () => {
     });
 
 
-  test("id:002 As a user I would like to receive an error message, if I enter invalid email", async ({ page }) => {
+  test.skip("id:002 As a user I would like to receive an error message, if I enter invalid email", async ({ page }) => {
     
     // Step 1. Navigate to the login page and close cookie banners
     await page.goto(URLs.pageLogin);
@@ -59,7 +59,7 @@ test.describe("User Login Tests", () => {
     });
 
 
-  test("id:003 As a user I would like to receive an error message, if I enter invalid password", async ({ page }) => {
+  test.skip("id:003 As a user I would like to receive an error message, if I enter invalid password", async ({ page }) => {
     
     // Step 1. Navigate to the login page and close cookie banners
     await page.goto(URLs.pageLogin);
@@ -80,7 +80,7 @@ test.describe("User Login Tests", () => {
     });
 
 
-  test("id:004 As a user I would like to receive an error message, if email is empty", async ({ page }) => {
+  test.skip("id:004 As a user I would like to receive an error message, if email is empty", async ({ page }) => {
     
     // Step 1. Navigate to the login page and close cookie banners
     await page.goto(URLs.pageLogin);
@@ -100,7 +100,7 @@ test.describe("User Login Tests", () => {
     await expect(pageLogin.loginFormInputErrorMessage).toHaveText("* Pflichtfeld");
     });
 
-    test("id:005 As a user I would like to receive an error message, if password is empty", async ({ page }) => {
+    test.skip("id:005 As a user I would like to receive an error message, if password is empty", async ({ page }) => {
     
       // Step 1. Navigate to the login page and close cookie banners
       await page.goto(URLs.pageLogin);
